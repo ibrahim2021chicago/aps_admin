@@ -23,7 +23,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=`ps -ef | grep 'prod-aps-admin`;
+                ps_out=`ps -ef | grep prod-aps-admin | grep -v grep`;
                 if [[ "$ps_out" != "" ]];then
                     echo "$ps_out"
                 else
