@@ -470,28 +470,68 @@ select opt in "${options[@]}"
 do
     case $opt in
         "ACARS WL Admin")
-            ACARSWLAdmin
+            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03523.prod.fedex.com"] ]];then
+                ACARSWLAdmin
+            else
+                echo "The service is not available on this server"
+            fi
+            echo ""
             ;;
         "ACARS WL Managed")
-            ACARSWLManaged
+            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03522.prod.fedex.com,pje03523.prod.fedex.com,pje03524.prod.fedex.com"] ]];then
+                ACARSWLManaged
+            else
+                echo "The service is not available on this server"
+            fi
+            echo ""
             ;;
         "FPS WL Admin")
-            FPSWLAdmin
+            if [[ `hostname` =~ ["pje99171.prod.fedex.com,pje99173.prod.fedex.com"] ]];then
+                FPSWLAdmin
+            else
+                echo "The service is not available on this server"
+            fi
+            echo ""
             ;;
         "FPS WL Managed")
-            FPSWLManaged
+            if [[ `hostname` =~ ["pje99171.prod.fedex.com,pje99172.prod.fedex.com,pje99173.prod.fedex.com,pje99174.prod.fedex.com"] ]];then
+                FPSWLManaged
+            else
+                echo "The service is not available on this server"
+            fi
+            echo ""
             ;;
         "ACARS Listener")
-            ACARSListener
+            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03523.prod.fedex.com"] ]];then
+                ACARSListener
+            else
+                echo "The service is not available on this server"
+            fi
+            echo ""
             ;;
         "Weather Listener")
-            WeatherListener
+            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03523.prod.fedex.com"] ]];then
+                WeatherListener
+            else
+                echo "The service is not available on this server"
+            fi
+            echo ""
             ;;
         "WnB Listener")
-            WnBListener
+            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03523.prod.fedex.com"] ]];then
+                WnBListener
+            else
+                echo "The service is not available on this server"
+            fi
+            echo ""
             ;;
         "Aerodata Listener")
-            AerodataListener
+            if [[ `hostname` =~ ["pje03522.prod.fedex.com,pje03524.prod.fedex.com"] ]];then
+                AerodataListener
+            else
+                echo "The service is not available on this server"
+            fi
+            echo ""
             ;;
         "Show Support Notes")
             ShowSupportNotes
