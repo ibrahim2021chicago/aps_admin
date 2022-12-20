@@ -23,30 +23,26 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=`ps -ef | grep 'prod-aps-admin' | grep -v grep`;
-                if [[ "$ps_out" != "" ]];then
-                    echo "$ps_out"
-                else
-                    echo "Service is not running"
-                fi
+                echo "ps_out=ps -ef | grep '$server-aps-admin' | grep -v grep";
+                # test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
             "Stop Admin Server")
-                ${cmd_stop_admin[@]};
-                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+                echo "${cmd_stop_admin[@]}";
+                # test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
 		        echo""
 		        ;;
             "Start Admin Server")
-                ${cmd_start_admin[@]};
-                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+                echo "${cmd_start_admin[@]}";
+                # test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
 		        echo""
 		        ;;
             "Tail Admin Server Log")
-                ${cmd_tail_admin_log[@]};
+                echo "${cmd_tail_admin_log[@]}";
                 echo""
                 ;;
             "Tail APS WebService log")
-                ${cmd_tail_aps_webservice_log[@]};
+                echo "${cmd_tail_aps_webservice_log[@]}";
                 echo""
                 ;;
             "Back to main menu")
@@ -78,30 +74,26 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=`ps -ef | grep 'prod-aps-managed' | grep -v grep`;
-                if [[ "$ps_out" != "" ]];then
-                    echo "$ps_out"
-                else
-                    echo "Service is not running"
-                fi
+                echo "ps_out=ps -ef | grep '$server-aps-managed' | grep -v grep";
+                # test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
             "Stop Managed Server")
-                ${cmd_stop_managed[@]};
-                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+                echo "${cmd_stop_managed[@]}";
+                # test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
 		        echo""
 		        ;;
             "Start Managed Server")
-                ${cmd_start_managed[@]};
-                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+                echo "${cmd_start_managed[@]}";
+                # test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
 		        echo""
 		        ;;
             "Tail Managed Server Log")
-                ${cmd_tail_managed_log[@]};
+                echo "${cmd_tail_managed_log[@]}";
                 echo""
                 ;;
             "Tail APS WebService log")
-                ${cmd_tail_aps_webservice_log[@]};
+                echo "${cmd_tail_aps_webservice_log[@]}";
                 echo""
                 ;;
             "Back to main menu")
@@ -133,26 +125,22 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=`ps -ef | grep 'prod-aps-admin' | grep -v grep`;
-                if [[ "$ps_out" != "" ]];then
-                    echo "$ps_out"
-                else
-                    echo "Service is not running"
-                fi
+                echo "ps_out=ps -ef | grep '$server-aps-admin' | grep -v grep";
+                # test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
             "Stop Admin Server")
-                ${cmd_stop_admin[@]};
-                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+                echo "${cmd_stop_admin[@]}";
+                # test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
 		        echo""
 		        ;;
             "Start Admin Server")
-                ${cmd_start_admin[@]};
-                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+                echo "${cmd_start_admin[@]}";
+                # test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
 		        echo""
 		        ;;
             "Tail Admin Server Log")
-                ${cmd_tail_admin_log[@]};
+                echo "${cmd_tail_admin_log[@]}";
                 echo""
                 ;;
             "Back to main menu")
@@ -184,30 +172,26 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=`ps -ef | grep 'prod-aps-managed' | grep -v grep`;
-                if [[ "$ps_out" != "" ]];then
-                    echo "$ps_out"
-                else
-                    echo "Service is not running"
-                fi
+                echo "ps_out=ps -ef | grep '$server-aps-managed' | grep -v grep";
+                # test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
             "Stop Managed Server")
-                ${cmd_stop_managed[@]};
-                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+                echo "${cmd_stop_managed[@]}";
+                # test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
 		        echo""
 		        ;;
             "Start Managed Server")
-                ${cmd_start_managed[@]};
-                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+                echo "${cmd_start_managed[@]}";
+                # test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
 		        echo""
 		        ;;
             "Tail Managed Server Log")
-                ${cmd_tail_managed_log[@]};
+                echo "${cmd_tail_managed_log[@]}";
                 echo""
                 ;;
             "Tail APS WebService log")
-                ${cmd_tail_aps_webservice_log[@]};
+                echo "${cmd_tail_aps_webservice_log[@]}";
                 echo""
                 ;;
             "Back to main menu")
@@ -239,26 +223,22 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Listener Process")
-                ps_out=`ps -ef | grep 'acars.event.listener' | grep -v grep`;
-                if [[ "$ps_out" != "" ]];then
-                    echo "$ps_out"
-                else
-                    echo "Service is not running"
-                fi
+                echo "ps_out=ps -ef | grep 'acars.event.listener' | grep -v grep";
+                # test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
             "Stop Listener")
-                ${cmd_stop_acars_listener[@]};
-                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+                echo "${cmd_stop_acars_listener[@]}";
+                # test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
 		        echo""
 		        ;;
             "Start Listener")
-                ${cmd_start_acars_listener[@]};
-                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+                echo "${cmd_start_acars_listener[@]}";
+                # test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
 		        echo""
 		        ;;
             "Tail Listener Log")
-                ${cmd_tail_acars_listener_log[@]};
+                echo "${cmd_tail_acars_listener_log[@]}";
                 echo""
                 ;;
             "Back to main menu")
@@ -290,26 +270,22 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Listener Process")
-                ps_out=`ps -ef | grep 'weather.event.listener' | grep -v grep`;
-                if [[ "$ps_out" != "" ]];then
-                    echo "$ps_out"
-                else
-                    echo "Service is not running"
-                fi
+                echo "ps_out=ps -ef | grep 'weather.event.listener' | grep -v grep";
+                # test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
             "Stop Listener")
-                ${cmd_stop_weather_listener[@]};
-                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+                echo "${cmd_stop_weather_listener[@]}";
+                # test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
 		        echo""
 		        ;;
             "Start Listener")
-                ${cmd_start_weather_listener[@]};
-                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+                echo "${cmd_start_weather_listener[@]}";
+                # test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
 		        echo""
 		        ;;
             "Tail Listener Log")
-                ${cmd_tail_weather_listener_log[@]};
+                echo "${cmd_tail_weather_listener_log[@]}";
                 echo""
                 ;;
             "Back to main menu")
@@ -341,26 +317,22 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Listener Process")
-                ps_out=`ps -ef | grep 'wnb.event.listener' | grep -v grep`;
-                if [[ "$ps_out" != "" ]];then
-                    echo "$ps_out"
-                else
-                    echo "Service is not running"
-                fi
+                echo "ps_out=ps -ef | grep 'wnb.event.listener' | grep -v grep";
+                # test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
             "Stop Listener")
-                ${cmd_stop_wnb_listener[@]};
-                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+                echo "${cmd_stop_wnb_listener[@]}";
+                # test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
 		        echo""
 		        ;;
             "Start Listener")
-                ${cmd_start_wnb_listener[@]};
-                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+                echo "${cmd_start_wnb_listener[@]}";
+                # test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
 		        echo""
 		        ;;
             "Tail Listener Log")
-                ${cmd_tail_wnb_listener_log[@]};
+                echo "${cmd_tail_wnb_listener_log[@]}";
                 echo""
                 ;;
             "Back to main menu")
@@ -392,26 +364,22 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Listener Process")
-                ps_out=`ps -ef | grep 'aps.scheduler.aerodata' | grep -v grep`;
-                if [[ "$ps_out" != "" ]];then
-                    echo "$ps_out"
-                else
-                    echo "Service is not running"
-                fi
+                echo "ps_out=ps -ef | grep 'aps.scheduler.aerodata' | grep -v grep";
+                # test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
             "Stop Listener")
-                ${cmd_stop_aerodata_listener[@]};
-                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+                echo "${cmd_stop_aerodata_listener[@]}";
+                # test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
 		        echo""
 		        ;;
             "Start Listener")
-                ${cmd_start_aerodata_listener[@]};
-                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+                echo "${cmd_start_aerodata_listener[@]}";
+                # test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
 		        echo""
 		        ;;
             "Tail Listener Log")
-                ${cmd_tail_aerodata_listener_log[@]};
+                echo "${cmd_tail_aerodata_listener_log[@]}";
                 echo""
                 ;;
             "Back to main menu")
@@ -470,7 +438,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "ACARS WL Admin")
-            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com) ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com|sje02521.ute.fedex.com|sje02522.ute.fedex.com) ]];then
                 ACARSWLAdmin
             else
                 echo "The service is not available on this server"
@@ -478,7 +446,7 @@ do
             echo ""
             ;;
         "ACARS WL Managed")
-            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03522.prod.fedex.com|pje03523.prod.fedex.com|pje03524.prod.fedex.com) ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03522.prod.fedex.com|pje03523.prod.fedex.com|pje03524.prod.fedex.com|sje02521.ute.fedex.com|sje02522.ute.fedex.com) ]];then
                 ACARSWLManaged
             else
                 echo "The service is not available on this server"
@@ -486,7 +454,7 @@ do
             echo ""
             ;;
         "FPS WL Admin")
-            if [[ `hostname` == @(pje99171.prod.fedex.com|pje99173.prod.fedex.com) ]];then
+            if [[ `hostname` == @(pje99171.prod.fedex.com|pje99173.prod.fedex.com|sje02521.ute.fedex.com|sje02522.ute.fedex.com) ]];then
                 FPSWLAdmin
             else
                 echo "The service is not available on this server"
@@ -494,7 +462,7 @@ do
             echo ""
             ;;
         "FPS WL Managed")
-            if [[ `hostname` == @(pje99171.prod.fedex.com|pje99172.prod.fedex.com|pje99173.prod.fedex.com|pje99174.prod.fedex.com) ]];then
+            if [[ `hostname` == @(pje99171.prod.fedex.com|pje99172.prod.fedex.com|pje99173.prod.fedex.com|pje99174.prod.fedex.com|sje02521.ute.fedex.com|sje02522.ute.fedex.com) ]];then
                 FPSWLManaged
             else
                 echo "The service is not available on this server"
@@ -502,7 +470,7 @@ do
             echo ""
             ;;
         "ACARS Listener")
-            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com) ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com|sje02521.ute.fedex.com|sje02522.ute.fedex.com) ]];then
                 ACARSListener
             else
                 echo "The service is not available on this server"
@@ -510,7 +478,7 @@ do
             echo ""
             ;;
         "Weather Listener")
-            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com) ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com|sje02521.ute.fedex.com|sje02522.ute.fedex.com) ]];then
                 WeatherListener
             else
                 echo "The service is not available on this server"
@@ -518,7 +486,7 @@ do
             echo ""
             ;;
         "WnB Listener")
-            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com) ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com|sje02521.ute.fedex.com|sje02522.ute.fedex.com) ]];then
                 WnBListener
             else
                 echo "The service is not available on this server"
@@ -526,7 +494,7 @@ do
             echo ""
             ;;
         "Aerodata Listener")
-            if [[ `hostname` == @(pje03522.prod.fedex.com|pje03524.prod.fedex.com) ]];then
+            if [[ `hostname` == @(pje03522.prod.fedex.com|pje03524.prod.fedex.com|sje02521.ute.fedex.com|sje02522.ute.fedex.com) ]];then
                 AerodataListener
             else
                 echo "The service is not available on this server"
