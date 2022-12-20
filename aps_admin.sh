@@ -271,6 +271,159 @@ DR Site: $DRSite
     done
 }
 
+# Weather Listener
+WeatherListener () {
+    clear
+    echo "
+Weather Listener
+----------------
+
+`hostname`
+DR Site: $DRSite
+"
+
+    local PS3='Choose an option: '
+    local options=("Grep Listener Process" "Stop Listener" "Start Listener" "Tail Listener Log" "Back to main menu")
+    local opt
+    COLUMNS=12
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Grep Listener Process")
+                ps_out=`ps -ef | grep 'weather.event.listener' | grep -v grep`;
+                if [[ "$ps_out" != "" ]];then
+                    echo "$ps_out"
+                else
+                    echo "Service is not running"
+                fi
+		        echo""
+		        ;;
+            "Stop Listener")
+                ${cmd_stop_weather_listener[@]};
+                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+		        echo""
+		        ;;
+            "Start Listener")
+                ${cmd_start_weather_listener[@]};
+                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+		        echo""
+		        ;;
+            "Tail Listener Log")
+                ${cmd_tail_weather_listener_log[@]};
+                echo""
+                ;;
+            "Back to main menu")
+                exec "$0"
+                ;;
+            *) echo "Invalid option $REPLY"
+		        echo""
+		        ;;
+        esac
+    done
+}
+
+# WnB Listener
+WnBListener () {
+    clear
+    echo "
+WnB Listener
+------------
+
+`hostname`
+DR Site: $DRSite
+"
+
+    local PS3='Choose an option: '
+    local options=("Grep Listener Process" "Stop Listener" "Start Listener" "Tail Listener Log" "Back to main menu")
+    local opt
+    COLUMNS=12
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Grep Listener Process")
+                ps_out=`ps -ef | grep 'wnb.event.listener' | grep -v grep`;
+                if [[ "$ps_out" != "" ]];then
+                    echo "$ps_out"
+                else
+                    echo "Service is not running"
+                fi
+		        echo""
+		        ;;
+            "Stop Listener")
+                ${cmd_stop_wnb_listener[@]};
+                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+		        echo""
+		        ;;
+            "Start Listener")
+                ${cmd_start_wnb_listener[@]};
+                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+		        echo""
+		        ;;
+            "Tail Listener Log")
+                ${cmd_tail_wnb_listener_log[@]};
+                echo""
+                ;;
+            "Back to main menu")
+                exec "$0"
+                ;;
+            *) echo "Invalid option $REPLY"
+		        echo""
+		        ;;
+        esac
+    done
+}
+
+# Aerodata Listener
+AerodataListener () {
+    clear
+    echo "
+Aerodata Listener
+------------
+
+`hostname`
+DR Site: $DRSite
+"
+
+    local PS3='Choose an option: '
+    local options=("Grep Listener Process" "Stop Listener" "Start Listener" "Tail Listener Log" "Back to main menu")
+    local opt
+    COLUMNS=12
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Grep Listener Process")
+                ps_out=`ps -ef | grep 'aps.scheduler.aerodata' | grep -v grep`;
+                if [[ "$ps_out" != "" ]];then
+                    echo "$ps_out"
+                else
+                    echo "Service is not running"
+                fi
+		        echo""
+		        ;;
+            "Stop Listener")
+                ${cmd_stop_aerodata_listener[@]};
+                test $? -eq 0 && echo "Service stopped successfully" || echo "Service couldn't be stopped"
+		        echo""
+		        ;;
+            "Start Listener")
+                ${cmd_start_aerodata_listener[@]};
+                test $? -eq 0 && echo "Service started successfully" || echo "Service couldn't be started"
+		        echo""
+		        ;;
+            "Tail Listener Log")
+                ${cmd_tail_aerodata_listener_log[@]};
+                echo""
+                ;;
+            "Back to main menu")
+                exec "$0"
+                ;;
+            *) echo "Invalid option $REPLY"
+		        echo""
+		        ;;
+        esac
+    done
+}
+
 # Show Support Notes
 ShowSupportNotes () {
     clear
