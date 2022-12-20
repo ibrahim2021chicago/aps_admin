@@ -470,7 +470,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "ACARS WL Admin")
-            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03523.prod.fedex.com"] ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com) ]];then
                 ACARSWLAdmin
             else
                 echo "The service is not available on this server"
@@ -478,7 +478,7 @@ do
             echo ""
             ;;
         "ACARS WL Managed")
-            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03522.prod.fedex.com,pje03523.prod.fedex.com,pje03524.prod.fedex.com"] ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03522.prod.fedex.com|pje03523.prod.fedex.com|pje03524.prod.fedex.com) ]];then
                 ACARSWLManaged
             else
                 echo "The service is not available on this server"
@@ -486,7 +486,7 @@ do
             echo ""
             ;;
         "FPS WL Admin")
-            if [[ `hostname` =~ ["pje99171.prod.fedex.com,pje99173.prod.fedex.com"] ]];then
+            if [[ `hostname` == @(pje99171.prod.fedex.com|pje99173.prod.fedex.com) ]];then
                 FPSWLAdmin
             else
                 echo "The service is not available on this server"
@@ -494,7 +494,7 @@ do
             echo ""
             ;;
         "FPS WL Managed")
-            if [[ `hostname` =~ ["pje99171.prod.fedex.com,pje99172.prod.fedex.com,pje99173.prod.fedex.com,pje99174.prod.fedex.com"] ]];then
+            if [[ `hostname` == @(pje99171.prod.fedex.com|pje99172.prod.fedex.com|pje99173.prod.fedex.com|pje99174.prod.fedex.com) ]];then
                 FPSWLManaged
             else
                 echo "The service is not available on this server"
@@ -502,7 +502,7 @@ do
             echo ""
             ;;
         "ACARS Listener")
-            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03523.prod.fedex.com"] ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com) ]];then
                 ACARSListener
             else
                 echo "The service is not available on this server"
@@ -510,7 +510,7 @@ do
             echo ""
             ;;
         "Weather Listener")
-            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03523.prod.fedex.com"] ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com) ]];then
                 WeatherListener
             else
                 echo "The service is not available on this server"
@@ -518,7 +518,7 @@ do
             echo ""
             ;;
         "WnB Listener")
-            if [[ `hostname` =~ ["pje03521.prod.fedex.com,pje03523.prod.fedex.com"] ]];then
+            if [[ `hostname` == @(pje03521.prod.fedex.com|pje03523.prod.fedex.com) ]];then
                 WnBListener
             else
                 echo "The service is not available on this server"
@@ -526,7 +526,7 @@ do
             echo ""
             ;;
         "Aerodata Listener")
-            if [[ `hostname` =~ ["pje03522.prod.fedex.com,pje03524.prod.fedex.com"] ]];then
+            if [[ `hostname` == @(pje03522.prod.fedex.com|pje03524.prod.fedex.com) ]];then
                 AerodataListener
             else
                 echo "The service is not available on this server"
