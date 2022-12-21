@@ -24,7 +24,11 @@ DR Site: $DRSite
         case $opt in
             "Grep Process")
                 ps_out=`ps -ef | grep '$server-aps-admin' | grep -v grep`;
-                test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
+                if [[ "$ps_out" != "" ]];then
+                    echo "$ps_out"
+                else
+                    echo "Service is not running"
+                fi
 		        echo""
 		        ;;
             "Stop Admin Server")
