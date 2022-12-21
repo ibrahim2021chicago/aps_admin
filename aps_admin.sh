@@ -23,7 +23,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=ps -ef | grep '$server-aps-admin' | grep -v grep;
+                ps_out=`ps -ef | grep '$server-aps-admin' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
@@ -74,7 +74,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=ps -ef | grep '$server-aps-managed' | grep -v grep;
+                ps_out=`ps -ef | grep '$server-aps-managed' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
@@ -125,7 +125,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=ps -ef | grep '$server-aps-admin' | grep -v grep;
+                ps_out=`ps -ef | grep '$server-aps-admin' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
@@ -172,7 +172,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=ps -ef | grep '$server-aps-managed' | grep -v grep;
+                ps_out=`ps -ef | grep '$server-aps-managed' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
@@ -223,7 +223,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Process")
-                ps_out=ps -ef | grep '$server-aps-managed' | grep -v grep;
+                ps_out=`ps -ef | grep '$server-aps-managed' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
@@ -274,7 +274,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Listener Process")
-                ps_out=ps -ef | grep 'acars.event.listener' | grep -v grep;
+                ps_out=`ps -ef | grep 'acars.event.listener' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
@@ -321,7 +321,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Listener Process")
-                ps_out=ps -ef | grep 'weather.event.listener' | grep -v grep;
+                ps_out=`ps -ef | grep 'weather.event.listener' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
@@ -368,7 +368,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Listener Process")
-                ps_out=ps -ef | grep 'wnb.event.listener' | grep -v grep;
+                ps_out=`ps -ef | grep 'wnb.event.listener' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
@@ -415,7 +415,7 @@ DR Site: $DRSite
     do
         case $opt in
             "Grep Listener Process")
-                ps_out=ps -ef | grep 'aps.scheduler.aerodata' | grep -v grep;
+                ps_out=`ps -ef | grep 'aps.scheduler.aerodata' | grep -v grep`;
                 test $? -eq 0 && echo "$ps_out" || echo "Service is not running"
 		        echo""
 		        ;;
